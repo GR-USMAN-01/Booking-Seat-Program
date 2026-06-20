@@ -16,6 +16,9 @@ function printSeats() {
   return seats;
 }
 
+var totalSeats = audi.length * audi[0].length;
+var bookedSeats = 0;
+
 for (var i = 0; i >= 0; i++) {
   var selectedOption = prompt(
     "Please select one of the following options:\n" +
@@ -46,6 +49,11 @@ for (var i = 0; i >= 0; i++) {
       audi[r - 1][c - 1] = "X";
       console.log("Seat booked successfully!");
       console.log(printSeats());
+      
+      if (bookedSeats === totalSeats) {
+        console.log("There's No Seats Availible All The Seats Are Already Booked!")
+        break;
+      }
     }
   } else {
     console.log("Invalid option");
